@@ -186,6 +186,24 @@
 /* --- Resend Link Styles --- */
 .disabled-link { color: #999; pointer-events: none; text-decoration: none; }
 #resendTimer, #resendRegisterTimer { margin-left: 5px; color: #555; font-weight: bold; }
+
+/* FIX: Ensure modal text is readable when dark theme is active */
+body.dark-theme .modal-content,
+body.dark-theme .modal-content .modal-title,
+body.dark-theme .modal-content .form-group label,
+body.dark-theme .modal-content .modal-bottom-text,
+body.dark-theme #resendTimer, 
+body.dark-theme #resendRegisterTimer {
+    color: #333; /* A standard dark color for text */
+}
+
+body.dark-theme .modal-content a {
+    color: #007bff; /* A standard blue for links */
+}
+
+body.dark-theme .disabled-link {
+    color: #999 !important; /* Important to override the general 'a' rule */
+}
 </style>
 
 <script>
