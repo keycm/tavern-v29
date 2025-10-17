@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
             } else {
-                // To prevent user enumeration, show a generic success message even if email doesn't exist
-                $response['success'] = true;
-                $response['message'] = 'If an account with that email exists, a reset code has been sent.';
+                // MODIFIED: Return a specific error for non-registered emails
+                $response['success'] = false;
+                $response['message'] = 'This email is not registered. Please check the address or register for a new account.';
             }
         }
     }
